@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2485EA21-89FE-4FFF-8E64-6927AEB1DB50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB.Driver.Core.Extensions.OpenTelemetry", "src\MongoDB.Driver.Core.Extensions.OpenTelemetry\MongoDB.Driver.Core.Extensions.OpenTelemetry.csproj", "{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7D59771F-DE2F-411B-B6E6-07C6C9D50E13}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Build.ps1 = Build.ps1
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		Push.ps1 = Push.ps1
+		README.md = README.md
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|x64.Build.0 = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Debug|x86.Build.0 = Debug|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|x64.ActiveCfg = Release|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|x64.Build.0 = Release|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|x86.ActiveCfg = Release|Any CPU
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B187E65-5F14-4F8A-BEEC-4E31CDEB31ED} = {2485EA21-89FE-4FFF-8E64-6927AEB1DB50}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC78E182-A61F-4AA0-B7C2-5AE27711253C}
+	EndGlobalSection
+EndGlobal
