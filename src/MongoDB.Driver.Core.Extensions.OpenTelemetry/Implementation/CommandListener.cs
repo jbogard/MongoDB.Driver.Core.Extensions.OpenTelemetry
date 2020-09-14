@@ -26,10 +26,9 @@ namespace MongoDB.Driver.Core.Extensions.OpenTelemetry.Implementation
                 return;
             }
 
-            activity.SetKind(ActivityKind.Client);
             activity.DisplayName = $"mongodb.{message.CommandName}";
 
-            _activitySource.Start(activity);
+            _activitySource.Start(activity, ActivityKind.Client);
 
             if (activity.IsAllDataRequested)
             {
