@@ -70,7 +70,7 @@ namespace MongoDB.Driver.Core.Extensions.OpenTelemetry.Implementation
 
             if (activity.IsAllDataRequested)
             {
-                activity.SetStatus(Status.Unknown.WithDescription(message.Failure.Message));
+                activity.SetStatus(Status.Error.WithDescription(message.Failure.Message));
                 activity.AddTag("error.type", message.Failure.GetType().FullName);
                 activity.AddTag("error.msg", message.Failure.Message);
                 activity.AddTag("error.stack", message.Failure.StackTrace);
