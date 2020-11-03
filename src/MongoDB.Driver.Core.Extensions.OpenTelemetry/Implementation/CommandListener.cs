@@ -34,19 +34,26 @@ namespace MongoDB.Driver.Core.Extensions.OpenTelemetry.Implementation
             {
                 activity.AddTag("db.type", "mongo");
                 activity.AddTag("db.instance", message.DatabaseNamespace.DatabaseName);
-                var endPoint = message.ConnectionId?.ServerId?.EndPoint;
-                switch (endPoint)
+                if (string.IsNullOrWhiteSpace(_options.DisplayName))
                 {
-                    case IPEndPoint ipEndPoint:
-                        activity.AddTag("db.user", $"mongodb://{ipEndPoint.Address}:{ipEndPoint.Port}");
-                        activity.AddTag("net.peer.ip", ipEndPoint.Address.ToString());
-                        activity.AddTag("net.peer.port", ipEndPoint.Port.ToString());
-                        break;
-                    case DnsEndPoint dnsEndPoint:
-                        activity.AddTag("db.user", $"mongodb://{dnsEndPoint.Host}:{dnsEndPoint.Port}");
-                        activity.AddTag("net.peer.name", dnsEndPoint.Host);
-                        activity.AddTag("net.peer.port", dnsEndPoint.Port.ToString());
-                        break;
+                    var endPoint = message.ConnectionId?.ServerId?.EndPoint;
+                    switch (endPoint)
+                    {
+                        case IPEndPoint ipEndPoint:
+                            activity.AddTag("db.user", $"mongodb://{ipEndPoint.Address}:{ipEndPoint.Port}");
+                            activity.AddTag("net.peer.ip", ipEndPoint.Address.ToString());
+                            activity.AddTag("net.peer.port", ipEndPoint.Port.ToString());
+                            break;
+                        case DnsEndPoint dnsEndPoint:
+                            activity.AddTag("db.user", $"mongodb://{dnsEndPoint.Host}:{dnsEndPoint.Port}");
+                            activity.AddTag("net.peer.name", dnsEndPoint.Host);
+                            activity.AddTag("net.peer.port", dnsEndPoint.Port.ToString());
+                            break;
+                    }
+                }
+                else
+                {
+                    activity.AddTag("net.peer.name", _options.DisplayName);
                 }
 
                 if (_options.CaptureCommandText)
