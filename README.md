@@ -28,29 +28,15 @@ That event subscriber exposes Activity events via a DiagnosticListener under the
 Once you've configured your MongoDB client to expose diagnostics events as above, you can configure OpenTelemetry (typically through the [OpenTelemetry.Extensions.Hosting](https://www.nuget.org/packages/OpenTelemetry.Extensions.Hosting/0.2.0-alpha.275) package).
 
 ```csharp
-services.AddOpenTelemetry(builder => {
+services.AddOpenTelemetryTracing(builder => {
     builder
         // Configure exporters
-        .UseZipkin()
+        .AddZipkinExporter()
         // Configure adapters
-        .UseRequestAdapter()
-        .UseDependencyAdapter()
-        .AddMongoDBAdapter(); // Adds MongoDB OTel support
+        .AddHttpClientInstrumentation()
+        .AddAspNetCoreInstrumentation()
+        .AddMongoDBInstrumentation(); // Adds MongoDB OTel support
 });
 ```
 
-By default, the command text is not logged. To change this, configure the options:
-
-```csharp
-services.AddOpenTelemetry(builder => {
-    builder
-        // Configure exporters
-        .UseZipkin()
-        // Configure adapters
-        .UseRequestAdapter()
-        .UseDependencyAdapter()
-        .AddMongoDBAdapter(opt => opt.CaptureCommandText = true); // Adds MongoDB OTel support
-});
-```
-
-This package supports the latest released OpenTelemetry beta package on NuGet.
+This package supports the latest released OpenTelemetry package on NuGet.
