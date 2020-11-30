@@ -39,4 +39,13 @@ services.AddOpenTelemetryTracing(builder => {
 });
 ```
 
-This package supports the latest released OpenTelemetry package on NuGet.
+This extension method only adds a source with the appropriate name:
+
+```csharp
+public static TracerProviderBuilder AddNServiceBusInstrumentation(this TracerProviderBuilder builder)
+{
+    return builder.AddSource("MongoDB.Driver.Core.Extensions.DiagnosticSources");
+}
+```
+
+This package supports OpenTelemetry version `1.0.0-rc1.1`.
