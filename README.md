@@ -48,4 +48,4 @@ public static TracerProviderBuilder AddNServiceBusInstrumentation(this TracerPro
 }
 ```
 
-This package supports OpenTelemetry version `1.0.0-rc1.1`.
+This package supports OpenTelemetry version `1.0.1`.
