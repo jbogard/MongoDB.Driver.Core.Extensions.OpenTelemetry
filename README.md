@@ -42,10 +42,10 @@ services.AddOpenTelemetryTracing(builder => {
 This extension method only adds a source with the appropriate name:
 
 ```csharp
-public static TracerProviderBuilder AddNServiceBusInstrumentation(this TracerProviderBuilder builder)
+public static TracerProviderBuilder AddMongoDBInstrumentation(this TracerProviderBuilder builder)
 {
     return builder.AddSource("MongoDB.Driver.Core.Extensions.DiagnosticSources");
 }
 ```
 
-This package supports OpenTelemetry version `1.0.0-rc1.1`.
+This package supports OpenTelemetry version `1.0.1`.
