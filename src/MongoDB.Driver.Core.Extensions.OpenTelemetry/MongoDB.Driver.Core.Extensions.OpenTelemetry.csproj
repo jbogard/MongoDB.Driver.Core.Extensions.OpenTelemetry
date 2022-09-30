@@ -15,10 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver.Core.Extensions.DiagnosticSources" Version="1.1.0" />
-    <PackageReference Include="OpenTelemetry" Version="1.0.1" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="MinVer" Version="2.4.0" PrivateAssets="All" />
+    <PackageReference Include="MongoDB.Driver.Core.Extensions.DiagnosticSources" Version="1.2.0" />
+    <PackageReference Include="OpenTelemetry" Version="[1.0.1,)" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="MinVer" Version="4.2.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
